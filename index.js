@@ -78,6 +78,7 @@ const dragEventManager = {
     },
     startDrag: function(draggAbleObject, offsetX, offsetY) {
         this.addEvent(document, 'pointermove', (e) => {
+            e.preventDefault();
             draggAbleObject.style.top = e.clientY - offsetY + 'px';
             draggAbleObject.style.left = e.clientX - offsetX + 'px';
         })
